@@ -61,6 +61,8 @@ _G=(
 	[m]=""
 	[p]=""
 	[f]=""
+	#[includes]="-L /home/ajeep/git/PanBook/ext/include-files/include-files.lua -L /home/ajeep/git/PanBook/ext/include-code-files/include-code-files.lua -L /home/ajeep/git/PanBook/ext/meta-vars/meta-vars.lua -F pandoc-csv2table"
+	[includes]="-L /home/ajeep/git/PanBook/ext/include-files/include-files.lua -L /home/ajeep/git/PanBook/ext/include-code-files/include-code-files.lua -L /home/ajeep/git/PanBook/ext/meta-vars/meta-vars.lua"
 	[crossref]="-F pandoc-crossref"
 	[citeproc]="--citeproc"
 	[pandoc-param]=""
@@ -75,6 +77,7 @@ _G[header]=$CWD/build/add-headers/${_G[build_id]}.tex                 # 默认he
 
 _P=(
 	[toc]=""
+	[extract-media]="/tmp/"
 	[csl]=$SCRIPTDIR/csl/chinese-gb7714-2005-numeric.csl              # 默认cls文件路径（需要在获取参数后重置）
 	[bibliography]=$CWD/src/bibliography.bib                          # 默认bibliography路径（需要在获取参数后删除）
 	[metadata-file]=$CWD/src/metadata.yaml                            # 默认metadata.yaml（需要在获取参数后重置）	
@@ -170,5 +173,6 @@ note "Welcome to PanBook!"
 fixDir
 mkDir
 
+note "${_G[func-pre]}_${_G[function]}"
 _call ${_G[func-pre]}_${_G[function]}
 printGlobal
