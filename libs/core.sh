@@ -100,7 +100,8 @@ function initBib() {
 
 function getBody() {
 	cd ${_G[workdir]}
-	find ./ -name "*.md" 2>/dev/null |sort |grep -vE "${_G[frontmatter]}|${_G[backmatter]}"
+	#find ./ -name "*.md" 2>/dev/null |sort |grep -vE "${_G[frontmatter]}|${_G[backmatter]}"
+	[[ -f main.md ]] && echo "main.md"
 }
 
 function initBody() {
@@ -108,7 +109,7 @@ function initBody() {
 	_G[body]=`getBody`
 	# 兼容性处理
 	compatible
-	
+	note ${_G[body]}
 	bodyfile=$1
 	[ "$bodyfile"x == ""x ] && bodyfile=${_G[defaultbody]}
 	if [ "${_G[body]}"x == ""x ];then
@@ -161,7 +162,8 @@ function init()
 
 	# 清空$HEADERS 以后都是追加
 	echo > ${_G[header]}
-	[ "${_G[trace]}"x == "true"x -o "${_G[debug]}"x == "true"x ] && _G[interaction]="-interaction=nonstopmode -halt-on-error"
+	#[ "${_G[trace]}"x == "true"x -o "${_G[debug]}"x == "true"x ] && _G[interaction]="-interaction=nonstopmode -halt-on-error"
+	[ "${_G[trace]}"x == "true"x -o "${_G[debug]}"x == "true"x ] && _G[interaction]="-interaction=nonstopmode"
 	_G[ofile]=${_G[build]}/${_G[ofile]}-${_G[function]}-${_G[style]}
 
 	# gif转换为eps格式
@@ -305,6 +307,10 @@ function heapSize() {
 }
 
 function getPandocParam() {
+	#if [ -f pandoc.sh ]; then
+	#	_G[pandoc-param]="`cat pandoc.sh`  ${_G[ofile]}.${_G[t]}"
+	#	return 0
+	#fi
 	crossrefYaml=""
 	if [ "${_G[crossref]}"x != ""x ];then
 		crossrefYaml="-M crossrefYaml=${_G[crs]}"
@@ -314,7 +320,7 @@ function getPandocParam() {
 	getP
 	getF
 	heapSize
-	_G[pandoc-param]="pandoc ${_G[heapsize]} ${_G[f0]} ${_G[crossref]} $crossrefYaml ${_G[citeproc]} ${_G[f]} ${_G[p]} ${_G[v]} ${_G[m]} ${_G[body]} -o ${_G[ofile]}.${_G[t]}"
+	_G[pandoc-param]="pandoc ${_G[heapsize]} ${_G[includes]} ${_G[f0]} ${_G[crossref]} $crossrefYaml ${_G[citeproc]} ${_G[f]} ${_G[p]} ${_G[v]} ${_G[m]} ${_G[body]} -o ${_G[ofile]}.${_G[t]}"
 }
 
 function getXeLaTeXParam() {
