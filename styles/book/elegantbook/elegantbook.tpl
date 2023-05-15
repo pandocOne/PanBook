@@ -89,7 +89,7 @@ $endif$
 $if(author)$
 \author{$for(author)$$author$$sep$, $endfor$}
 $endif$
-\date{\today}
+$if(date)$ \date{$date$} $endif$
 
 $for(header-includes)$
 $header-includes$
@@ -185,6 +185,7 @@ $for(include-before)$
 $include-before$
 $endfor$
 
+\setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
 
 $if(lot)$

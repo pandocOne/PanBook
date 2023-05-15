@@ -8,3 +8,8 @@
 参见：https://github.com/annProg/PanBook/issues/38
 
 默认会禁用 `newtxtext`，如果需要使用，请加 `-V newtxtext` 参数
+
+======modify by Ajeep===========
+
+- move titlepage out of from elegantbook.cls to eleganttitle.tex
+- elegantbook.tpl: add `$date$` and `$tocdepth$`
