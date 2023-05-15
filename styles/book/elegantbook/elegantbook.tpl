@@ -145,6 +145,8 @@ $if(csl-refs)$
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
+\usepackage{lscape}
+
 \begin{document}
 
 \frontmatter
