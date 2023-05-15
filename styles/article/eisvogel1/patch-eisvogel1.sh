@@ -22,15 +22,15 @@ done
 unset _G[ext-wrap-introduction]
 unset _G[ext-wrap-problemset]
 
-_P[top-level-division]=section
+#_P[top-level-division]=section
 #_V[book]=yes
 _P[listings]=""
 _M[listings]=true
 _M[listings-disable-line-numbers]=true
-# panbook clean; rm build/*.pdf; panbook art --style=eisvogel1 -d
 _M[CJKmainfont]=NotoSerifSC-Regular
+# panbook clean; rm build/*.pdf; panbook art --style=eisvogel1 -d
 _M[geometry]=a4paper
-_M[fontsize]=14pt
+_M[fontsize]=12pt
 _M[colorlinks]=true
 _M[toc-title]=目录
 _V[titlepage]=yes
@@ -42,8 +42,6 @@ _V[titlepage-logo]="./images/logo.png"
 << comment
 _V[toc-own-page]=yes
 _V[include-auto]=yes
-_V[copyright]=true
-_V[licence]=ccnd
 comment
 
 # theorem 已有定义，不用扩展中的定义

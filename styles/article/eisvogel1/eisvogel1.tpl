@@ -913,7 +913,7 @@ $else$
 $if(titlepage)$
 \begin{titlepage}
 $if(titlepage-background)$
-\newgeometry{top=2cm, right=4cm, bottom=3cm, left=4cm}
+\newgeometry{top=13cm, right=2cm, bottom=3cm, left=2cm}
 $else$
 \newgeometry{left=6cm}
 $endif$
@@ -928,7 +928,7 @@ $endif$
 \begin{flushleft}
 \noindent
 \\[-1em]
-\vskip 10.8cm
+% \vskip 10.8cm
 \hskip -5cm
 \color[HTML]{$if(titlepage-text-color)$$titlepage-text-color$$else$5F5F5F$endif$}
 \makebox[0pt][l]{\colorRule[$if(titlepage-rule-color)$$titlepage-rule-color$$else$435488$endif$]{1.9\textwidth}{$if(titlepage-rule-height)$$titlepage-rule-height$$else$4$endif$pt}}
@@ -967,7 +967,7 @@ $endif$
 
 $if(titlepage-logo)$
 \noindent
-\includegraphics[width=$if(logo-width)$$logo-width$$else$35mm$endif$, left]{$titlepage-logo$}
+\includegraphics[width=$if(logo-width)$$logo-width$$else$35mm$endif$, right]{$titlepage-logo$}
 $endif$
 
 $if(titlepage-background)$
