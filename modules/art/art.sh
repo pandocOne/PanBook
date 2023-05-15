@@ -3,7 +3,7 @@ regmod art
 _H[art]="make article"
 
 function func_art() {
-	initBody article.md
+	initBody "main.md"
 	initBib
 	initMetadataFile
 	initMakefile
@@ -14,12 +14,14 @@ function func_art() {
 	init
 	_P[metadata-file]=${_P[metadata-file]}
 
+	if [ ${_G[t]} == "tex" ];then
+		getArrayVar _V documentclass ctexart
+	fi
+
 	_copystyle
 	_patch
 	
 	if [ ${_G[t]} == "tex" ];then
-		getArrayVar _V documentclass ctexart
-
 		# 启用扩展
 		execExtensions
 	fi
@@ -39,7 +41,7 @@ function func_art() {
 
 		floatListings $TEX_OUTPUT
 
-		latexmk -xelatex ${_G[xelatex]} -output-directory=${_G[build]} $TEX_OUTPUT #1&>/dev/null
+		latexmk -f -xelatex ${_G[xelatex]} -output-directory=${_G[build]} $TEX_OUTPUT #1&>/dev/null
 	fi
 	compileStatus ${_G[function]}
 }
