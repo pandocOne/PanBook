@@ -162,8 +162,7 @@ function init()
 
 	# 清空$HEADERS 以后都是追加
 	echo > ${_G[header]}
-	#[ "${_G[trace]}"x == "true"x -o "${_G[debug]}"x == "true"x ] && _G[interaction]="-interaction=nonstopmode -halt-on-error"
-	[ "${_G[trace]}"x == "true"x -o "${_G[debug]}"x == "true"x ] && _G[interaction]="-interaction=nonstopmode"
+	[ "${_G[trace]}"x == "true"x -o "${_G[debug]}"x == "true"x ] && _G[interaction]="-interaction=nonstopmode -halt-on-error"
 	_G[ofile]=${_G[build]}/${_G[ofile]}-${_G[function]}-${_G[style]}
 
 	# gif转换为eps格式
@@ -307,10 +306,6 @@ function heapSize() {
 }
 
 function getPandocParam() {
-	#if [ -f pandoc.sh ]; then
-	#	_G[pandoc-param]="`cat pandoc.sh`  ${_G[ofile]}.${_G[t]}"
-	#	return 0
-	#fi
 	crossrefYaml=""
 	if [ "${_G[crossref]}"x != ""x ];then
 		crossrefYaml="-M crossrefYaml=${_G[crs]}"
