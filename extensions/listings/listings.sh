@@ -26,6 +26,8 @@ function ext_listings() {
 		_P[listings]=""
 		_M[listings]=true
 		_G[highlight]="--listings"
+    _V[highlight-style]=tango
+    _M[listings-disable-line-numbers]=true
 
 		extStat listings done
 	else

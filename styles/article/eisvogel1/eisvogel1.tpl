@@ -899,6 +899,7 @@ $endif$
 
 \graphicspath{{/tmp/}{./figure/}{./figures/}{./image/}{./images/}{./graphics/}{./graphic/}{./pictures/}{./picture/}}
 \usepackage{indentfirst}
+\usepackage{lscape}
 %%
 %% end added
 %%

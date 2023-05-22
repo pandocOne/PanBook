@@ -146,6 +146,7 @@ $if(csl-refs)$
 $endif$
 
 \usepackage{lscape}
+\usepackage{multicol}
 
 \begin{document}
 

@@ -62,7 +62,7 @@ _G=(
 	[p]=""
 	[f]=""
 	#[includes]="-L /home/ajeep/git/PanBook/ext/include-files/include-files.lua -L /home/ajeep/git/PanBook/ext/include-code-files/include-code-files.lua -L /home/ajeep/git/PanBook/ext/meta-vars/meta-vars.lua -F pandoc-csv2table"
-	[includes]="-L /home/ajeep/git/PanBook/ext/include-files/include-files.lua -L /home/ajeep/git/PanBook/ext/include-code-files/include-code-files.lua -L /home/ajeep/git/PanBook/ext/meta-vars/meta-vars.lua"
+	[includes]="-L $SCRIPTDIR/ext/include-files/include-files.lua -L $SCRIPTDIR/ext/include-code-files/include-code-files.lua -L $SCRIPTDIR/ext/meta-vars/meta-vars.lua"
 	[crossref]="-F pandoc-crossref"
 	[citeproc]="--citeproc"
 	[pandoc-param]=""
@@ -89,6 +89,7 @@ _V=(
 )
 _M=(
 	[link-citations]=true                                             #  make your citations hyperlinks to the corresponding bibliography entries
+  [include-auto]=yes
 )
 _F=()
 

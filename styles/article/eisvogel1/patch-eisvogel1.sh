@@ -27,7 +27,7 @@ unset _G[ext-wrap-problemset]
 _P[listings]=""
 _M[listings]=true
 _M[listings-disable-line-numbers]=true
-_M[CJKmainfont]=NotoSerifSC-Regular
+_M[CJKmainfont]="NotoSerifSC-Regular"
 # panbook clean; rm build/*.pdf; panbook art --style=eisvogel1 -d
 _M[geometry]=a4paper
 _M[fontsize]=12pt
@@ -39,20 +39,20 @@ _V[titlepage-rule-height]=40
 _V[titlepage-rule-color]='FF7F00'
 _V[titlepage-background]="./images/reading-tea1.jpg"
 _V[titlepage-logo]="./images/logo.png"
+_M[include-auto]=yes
 << comment
 _V[toc-own-page]=yes
-_V[include-auto]=yes
 comment
 
 # theorem 已有定义，不用扩展中的定义
 _G[ext-theorem-use-tex]=false
 
-if [ "${_P[template]}"x != "" ];then
-	_V[documentclass]="eisvogel1"
-	getArrayVar _V classoption "cn"
-	_M[CJKmainfont]="NotoSerifSC-Regular"
-	unset _V[lang]
-fi
+#if [ "${_P[template]}"x != "" ];then
+#	_V[documentclass]="eisvogel1"
+#	getArrayVar _V classoption "cn"
+#_M[CJKmainfont]=SourceHanSerifCN-Medium
+#	unset _V[lang]
+#fi
 
 # 默认模板需要禁用unicode-math. unicode-math和newtxmath不兼容
 # https://github.com/ElegantLaTeX/ElegantBook/issues/9

@@ -4,8 +4,8 @@
 \usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
 \usepackage{float}
 \usepackage{fontspec}
-\newfontfamily\zhfont[BoldFont=NotoSansCJKsc-Bold,ItalicFont=STKaiti]{STFangsong}
-\newfontfamily\zhpunctfont{STFangsong}
+\newfontfamily\zhfont[BoldFont=SimHei,ItalicFont=Kaiti]{SimSun}
+\newfontfamily\zhpunctfont{FangSong}
 % \setmainfont{Times New Roman}
 \usepackage{indentfirst}
 \usepackage{zhspacing}

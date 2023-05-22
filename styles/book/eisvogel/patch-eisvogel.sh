@@ -25,7 +25,7 @@ unset _G[ext-wrap-problemset]
 
 #_P[top-level-division]=section
 _V[book]=yes
-_M[CJKmainfont]=NotoSerifSC-Regular
+_M[CJKmainfont]="NotoSerifSC-Regular"
 _V[titlepage]=yes
 _V[titlepage-text-color]='000000'
 _V[titlepage-rule-height]=0
@@ -53,7 +53,7 @@ _G[ext-theorem-use-tex]=false
 #if [ "${_P[template]}"x != "" ];then
 #	_V[documentclass]="scrbook"
 #	getArrayVar _V classoption "cn"
-#	_M[CJKmainfont]="NotoSerifSC-Regular"
+#_M[CJKmainfont]=SourceHanSerifCN-Medium
 #	unset _V[lang]
 #fi
 
